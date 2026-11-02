@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сайт-візитка з iPad чи телефона | UPgrade Hub</title>
+<meta name="description" content="Покрокова інструкція для партнерок UPgrade: як зробити власний сайт-візитку з телефона, без коду.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сайт-візитка з iPad чи телефона">
+<meta property="og:description" content="Заповни свій текст прямо на сторінці, скопіюй і зроби сайт за 4 кроки.">
+<meta property="og:locale" content="uk_UA">
+<meta name="theme-color" content="#3E2652">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233E2652'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23B8935A'%3EU%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F0E8; --powder:#E8D9C8; --paper:#FBF8F4; --ink:#3A3036; --gold:#B8935A;
+  --line:#D9CCBE; --muted:#8A7F86;
+  --deep:#3E2652; --main:#6B4A8A; --light:#DCD0E6; --btn:#6B4A8A;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:70px}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:var(--btn)}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+section{padding:60px 0}
+.eyebrow{font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--btn);margin-bottom:10px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--deep);line-height:1.1}
+h1{font-size:clamp(40px,9vw,64px)}
+h2{font-size:clamp(34px,7vw,46px)}
+h3{font-size:clamp(25px,5vw,30px);margin:34px 0 12px}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--main)}
+.goldline{width:60px;height:1px;background:var(--gold);margin:16px 0 22px}
+p+p{margin-top:12px}
+.stripe{height:14px;background:repeating-linear-gradient(90deg,var(--main) 0 22px,var(--light) 22px 44px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;background:var(--btn);color:var(--cream);border:0;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:16px 24px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--deep)}
+.btn.ghost{background:transparent;color:var(--deep);border:1px solid var(--deep)}
+.btn.small{min-height:44px;padding:10px 16px;font-size:12px}
+.note{background:var(--paper);border-left:2px solid var(--gold);padding:16px 18px;margin:18px 0}
+.warn{background:var(--light);color:var(--deep);padding:16px 18px;margin:18px 0}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;background:var(--paper);border:1px solid var(--line);padding:1px 6px;word-break:break-all}
+b.ui{font-weight:600;color:var(--deep);background:var(--paper);border:1px solid var(--line);padding:0 6px;white-space:nowrap}
+
+/* top */
+.top{background:var(--deep);color:var(--cream);padding:calc(26px + env(safe-area-inset-top,0px)) 0 54px}
+.logo{font-weight:600;font-size:15px;letter-spacing:1px;color:var(--light);text-decoration:none}
+.logo span{color:var(--gold)}
+.top h1{color:var(--cream);margin-top:34px}
+.top h1 em{color:var(--light)}
+.top p{max-width:560px;color:var(--cream);opacity:.92}
+.top .example{margin-top:22px;background:var(--cream);color:var(--deep)}
+.top .example:hover{background:var(--light)}
+.steps{display:grid;gap:12px;margin-top:30px}
+.steps a{display:flex;gap:16px;align-items:center;text-decoration:none;color:var(--cream);border:1px solid rgba(246,240,232,.25);padding:14px 16px}
+.steps a:hover{background:rgba(246,240,232,.06)}
+.steps b{font-family:var(--serif);font-weight:400;font-size:34px;color:var(--gold);line-height:1;min-width:34px}
+.steps span{font-size:16px}
+.steps small{display:block;color:var(--light);font-size:14px}
+
+/* sticky nav */
+.nav{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.nav a{flex:0 0 auto;text-decoration:none;color:var(--deep);font-size:14px;font-weight:500;border:1px solid var(--line);background:var(--paper);padding:8px 14px}
+.nav a.on{background:var(--btn);color:var(--cream);border-color:var(--btn)}
+
+ul.check{list-style:none;margin:14px 0}
+ul.check li{position:relative;padding-left:32px;margin-bottom:10px}
+ul.check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border:1px solid var(--main)}
+ul.dash{list-style:none;margin:14px 0}
+ul.dash li{position:relative;padding-left:32px;margin-bottom:10px}
+ul.dash li::before{content:"";position:absolute;left:0;top:14px;width:20px;height:1px;background:var(--main)}
+ol.num{list-style:none;counter-reset:n;margin:16px 0}
+ol.num>li{counter-increment:n;position:relative;padding-left:46px;margin-bottom:16px}
+ol.num>li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:-4px;font-family:var(--serif);font-size:28px;color:#C7A7B4;line-height:1.2}
+
+/* form */
+.form{background:var(--paper);border:1px solid var(--line);padding:26px 20px;margin-top:26px}
+.form h4{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--deep);margin:30px 0 4px;padding-top:22px;border-top:1px solid var(--line)}
+.form h4:first-of-type{margin-top:0;padding-top:0;border-top:0}
+.form .hint{font-size:14px;color:var(--muted);margin-bottom:12px}
+label{display:block;font-size:14px;font-weight:600;color:var(--deep);margin:16px 0 6px}
+label small{font-weight:400;color:var(--muted)}
+input[type=text],input[type=url],textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:0;padding:13px 14px;-webkit-appearance:none;appearance:none}
+textarea{min-height:120px;resize:vertical;line-height:1.5}
+textarea.tall{min-height:240px}
+input::placeholder,textarea::placeholder{color:#A99FA5}
+input:focus,textarea:focus{outline:none;border-color:var(--main);box-shadow:0 0 0 3px var(--light)}
+.row2{display:grid;gap:0 14px}
+@media(min-width:620px){.row2{grid-template-columns:1fr 1fr}}
+.toggle{display:flex;gap:12px;align-items:flex-start;margin:16px 0;font-size:16px;cursor:pointer}
+.toggle input{width:22px;height:22px;margin-top:2px;accent-color:var(--btn);flex:0 0 auto}
+.seg{display:flex;border:1px solid var(--btn);margin-top:8px}
+.seg label{flex:1;margin:0;text-align:center;padding:12px 6px;font-size:14px;cursor:pointer;color:var(--btn)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:var(--btn);color:var(--cream)}
+.hidden{display:none!important}
+
+.result{margin-top:30px;background:var(--deep);color:var(--cream);padding:24px 20px}
+.result h4{font-family:var(--serif);font-weight:400;font-size:28px;color:var(--cream);margin:0 0 6px;padding:0;border:0}
+.result p{font-size:15px;color:var(--light)}
+.result textarea{margin-top:16px;min-height:260px;background:#2E1C3D;color:var(--cream);border-color:rgba(246,240,232,.25);font-size:14px}
+.result .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.result .btn{background:var(--cream);color:var(--deep)}
+.result .btn.ghost{background:transparent;color:var(--cream);border-color:rgba(246,240,232,.5)}
+.missing{margin-top:14px;font-size:15px;color:var(--cream);background:rgba(184,147,90,.25);padding:12px 14px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--cream);padding:14px 22px;font-size:15px;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+
+/* compare */
+.cmp{display:grid;gap:16px;margin-top:22px}
+@media(min-width:620px){.cmp{grid-template-columns:1fr 1fr}}
+.cmp div{background:var(--paper);border:1px solid var(--line);padding:22px 20px}
+.cmp h3{margin:0 0 4px}
+.cmp dl{margin-top:12px;font-size:15px}
+ul.pm{list-style:none;margin-top:14px}
+ul.pm li{position:relative;padding-left:30px;margin-bottom:10px;font-size:16px}
+ul.pm li::before{position:absolute;left:0;top:-1px;font-family:var(--serif);font-size:24px;line-height:1.1}
+ul.pm li.plus::before{content:"+";color:var(--main)}
+ul.pm li.minus::before{content:"–";color:var(--muted)}
+.pmnote{font-size:15px;color:var(--deep);background:var(--light);padding:10px 14px;margin-top:4px}
+.cmp dt{color:var(--muted);font-size:13px;margin-top:10px}
+.cmp dd{color:var(--ink)}
+.variant{border-top:1px solid var(--line);margin-top:40px;padding-top:6px}
+.codebox{background:var(--paper);border:1px solid var(--line);padding:14px 16px;font-size:15px;white-space:pre-wrap;margin:10px 0}
+
+.check4 label{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:16px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:14px 16px;margin:0 0 10px;cursor:pointer}
+.check4 input{width:22px;height:22px;accent-color:var(--btn);flex:0 0 auto;margin-top:1px}
+.check4 label:has(input:checked){background:var(--light)}
+footer{background:var(--deep);color:var(--light);text-align:center;padding:34px 20px calc(34px + env(safe-area-inset-bottom,0px));font-size:14px}
+footer .logo{display:inline-block;margin-bottom:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">UPgrade <span>Hub</span></a>
+    <h1>Сайт-візитка <em>з телефона</em></h1>
+    <div class="goldline"></div>
+    <p>Власна сторінка в інтернеті: хто ти, твоя історія, що пропонуєш, кнопки на Telegram та Instagram. Без коду і без комп'ютера.</p>
+    <a class="btn example" href="https://oksanaklevchuk2.netlify.app/" target="_blank" rel="noopener">Подивитися приклад сайту →</a>
+    <nav class="steps" aria-label="Кроки">
+      <a href="#step1"><b>1</b><span>Підготуй інформацію про себе<small>текст прямо на цій сторінці, фото, посилання</small></span></a>
+      <a href="#step2"><b>2</b><span>Обери варіант і зроби дизайн сайту<small>netlify.new або чат + Netlify Drop</small></span></a>
+      <a href="#step3"><b>3</b><span>Опублікуй сайт<small>зроби видимим для всіх і дай гарну адресу</small></span></a>
+      <a href="#step4"><b>4</b><span>Перевір і поділись<small>чек-лист і посилання в шапку профілю</small></span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="nav"><div class="wrap">
+  <a href="#step1" data-s="step1">Крок 1</a>
+  <a href="#step2" data-s="step2">Крок 2</a>
+  <a href="#step3" data-s="step3">Крок 3</a>
+  <a href="#step4" data-s="step4">Крок 4</a>
+</div></div>
+
+<!-- КРОК 1 -->
+<section id="step1">
+  <div class="wrap">
+    <p class="eyebrow">Крок 1</p>
+    <h2>Підготуй інформацію <em>про себе</em></h2>
+    <div class="goldline"></div>
+    <p><b>Головне правило: усе одразу.</b> Чим повніший опис ти даси з першого разу, тим кращий сайт вийде і тим менше правок знадобиться. Кожна правка витрачає ліміт.</p>
+
+    <h3>Що підготувати</h3>
+    <ul class="check">
+      <li>2–3 твої фото: портрет і фото до кожної пропозиції. Обличчя і руки з продуктом працюють краще, ніж баночки окремо. Збережи їх заздалегідь у «Фото».</li>
+      <li>Посилання: особистий Telegram, Instagram, Telegram-канал, твій магазин, реєстрація.</li>
+      <li>Відгуки (за бажанням): тільки з дозволу клієнток, без прізвищ і телефонів.</li>
+    </ul>
+
+    <h3>Підказки до тексту</h3>
+    <ul class="dash">
+      <li>Почни історію з моменту, коли тобі самій було складно: це викликає довіру.</li>
+      <li>Чесно називай бренд, з яким працюєш.</li>
+      <li><b>Одна кнопка — одна дія.</b> Кнопка веде одразу туди, що на ній написано. Напис конкретний: «Хочу підбір», а не «Детальніше».</li>
+      <li>Про роботу в команді — спершу розмова в Telegram, а посилання на реєстрацію тільки в останньому блоці.</li>
+    </ul>
+
+    <h3>Заповни свій текст</h3>
+    <p>Сірим у полях показано приклад Оксани: він зникне, щойно почнеш писати. Заповнюй усе своїми словами. Сторінка сама збере повний опис для штучного інтелекту, тобі лишиться тільки натиснути «Скопіювати».</p>
+    <p style="margin-top:12px">Ось <a href="https://oksanaklevchuk2.netlify.app/" target="_blank" rel="noopener">сайт Оксани, зроблений за цим текстом</a>: так приблизно виглядатиме і твій.</p>
+    <div class="note">Твій текст зберігається тільки на твоєму телефоні: можна закрити сторінку і повернутися пізніше. Нікуди не надсилається і ніхто, крім тебе, його не бачить.</div>
+
+    <form class="form" id="f" autocomplete="off" onsubmit="return false">
+      <h4>Для якого варіанту текст?</h4>
+      <p class="hint">Можна змінити пізніше. Про варіанти — у кроці 2.</p>
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" name="variant" value="1" checked> Варіант 1: netlify.new</label>
+        <label><input type="radio" name="variant" value="2"> Варіант 2: чат</label>
+      </div>
+
+      <h4>Стиль</h4>
+      <label for="color">Акцентний колір <small>(разом із золотом і нюдовою базою)</small></label>
+      <input type="text" id="color" name="color" placeholder="відтінки фіолетового">
+
+      <h4>1. Привітання</h4>
+      <label for="name">Ім'я і прізвище</label>
+      <input type="text" id="name" name="name" placeholder="Оксана Клевчук" data-req="ім'я">
+      <label for="role">Хто ти, одне речення</label>
+      <textarea id="role" name="role" style="min-height:70px" placeholder="Б'юті-підприємиця і наставниця команди UPgrade." data-req="хто ти"></textarea>
+      <label for="help">Чим допомагаєш, одне речення</label>
+      <textarea id="help" name="help" style="min-height:90px" placeholder="Допомагаю жінкам підібрати продукти для краси і здоров'я та будувати власний дохід онлайн." data-req="чим допомагаєш"></textarea>
+      <label for="tg">Посилання на особистий Telegram <small>(кнопка «Написати мені»)</small></label>
+      <input type="url" id="tg" name="tg" inputmode="url" placeholder="https://t.me/твій_нік" data-req="особистий Telegram">
+
+      <h4>2. Про мене</h4>
+      <label for="aboutTitle">Заголовок блоку</label>
+      <input type="text" id="aboutTitle" name="aboutTitle" placeholder="Як я почала">
+      <label for="story">Твоя історія, 3–5 коротких абзаців</label>
+      <textarea class="tall" id="story" name="story" data-req="історія" placeholder="Весна 2019-го. Мені 22, я на четвертому курсі й працюю лаборанткою на кафедрі. Попереду — невелика зарплата і робота з ранку до вечора.
+
+До цього я вже пробувала іншу мережеву компанію, але там мене навчили лише реєструвати людей, і за кілька місяців я все закинула. В Oriflame я побачила проєкт «Енергія росту»: тут навчають, а менеджери з результатом діляться досвідом. І я вирішила спробувати ще раз.
+
+Перші місяці я поєднувала навчання, роботу й Oriflame — по 2 години вдень і ввечері. Тоді ж у мою команду прийшли перші люди. У 2020 році я вийшла на рівень директора, а з 2021-го працюю тільки онлайн.
+
+Тож уже понад 7 років я працюю в б'юті-сфері разом з Oriflame — міжнародною шведською компанією."></textarea>
+
+      <h4>3. Що я пропоную</h4>
+      <label class="toggle"><input type="checkbox" id="oneCard" name="oneCard"> У мене одна пропозиція (одна картка)</label>
+
+      <p class="hint" style="margin-top:14px"><b>Картка 1</b></p>
+      <label for="c1name">Назва</label>
+      <input type="text" id="c1name" name="c1name" placeholder="Краса і здоров'я" data-req="назва картки 1">
+      <label for="c1desc">Опис, 1–2 речення</label>
+      <textarea id="c1desc" name="c1desc" style="min-height:90px" placeholder="Рекомендую якісні продукти Oriflame і допомагаю вигідно оформити замовлення на офіційному сайті." data-req="опис картки 1"></textarea>
+      <div class="row2">
+        <div><label for="c1btn">Напис на кнопці</label>
+        <textarea id="c1btn" name="c1btn" style="min-height:70px" placeholder="Приєднатися до моєї б'юті-спільноти" data-req="кнопка картки 1"></textarea></div>
+        <div><label for="c1link">Куди веде кнопка</label>
+        <input type="url" id="c1link" name="c1link" inputmode="url" placeholder="посилання на твій Telegram-канал" data-req="посилання кнопки картки 1"></div>
+      </div>
+      <div class="row2">
+        <div><label for="c1btn2">Друга кнопка <small>(за бажанням)</small></label>
+        <input type="text" id="c1btn2" name="c1btn2" placeholder="Переглянути асортимент"></div>
+        <div><label for="c1link2">Куди веде друга кнопка</label>
+        <input type="url" id="c1link2" name="c1link2" inputmode="url" placeholder="посилання на твій магазин"></div>
+      </div>
+
+      <div id="card2">
+        <p class="hint" style="margin-top:22px"><b>Картка 2</b></p>
+        <label for="c2name">Назва</label>
+        <input type="text" id="c2name" name="c2name" placeholder="Дохід онлайн" data-req="назва картки 2" data-card2>
+        <label for="c2desc">Опис, 1–2 речення</label>
+        <textarea id="c2desc" name="c2desc" style="min-height:90px" placeholder="Навчання з нуля за системою UPgrade Hub і підтримка наставниці на кожному кроці." data-req="опис картки 2" data-card2></textarea>
+        <div class="row2">
+          <div><label for="c2btn">Напис на кнопці</label>
+          <input type="text" id="c2btn" name="c2btn" placeholder="Цікавить дохід онлайн" data-req="кнопка картки 2" data-card2></div>
+          <div><label for="c2link">Куди веде кнопка</label>
+          <input type="url" id="c2link" name="c2link" inputmode="url" placeholder="посилання на твій особистий Telegram" data-req="посилання кнопки картки 2" data-card2></div>
+        </div>
+      </div>
+
+      <h4>4. Відгуки <small style="font-family:var(--sans);font-size:14px;color:var(--muted)">за бажанням</small></h4>
+      <p class="hint">Тільки справжні, з дозволу клієнток, без прізвищ. Порожнє поле — блоку відгуків не буде.</p>
+      <textarea id="reviews" name="reviews" placeholder="Марина: «Через два тижні шкіра стала помітно сяйливішою…»"></textarea>
+
+      <h4>5. Соцмережі та посилання</h4>
+      <label for="links">Кожне посилання з нового рядка: назва — посилання</label>
+      <textarea id="links" name="links" data-req="посилання в соцмережі" placeholder="Написати в Telegram — https://t.me/…
+Instagram — https://www.instagram.com/…
+Б'юті-спільнота в Telegram — https://t.me/…
+Асортимент — https://…"></textarea>
+      <label for="reg">Посилання на реєстрацію в команду <small>(за бажанням)</small></label>
+      <input type="url" id="reg" name="reg" inputmode="url" placeholder="посилання на реєстрацію">
+      <label for="regCap">Підпис біля реєстрації</label>
+      <input type="text" id="regCap" name="regCap" placeholder="Уже вирішила? Зареєструйся і напиши мені в Telegram">
+
+      <h4>6. Фото</h4>
+      <p class="hint">Коротко опиши кожне фото, щоб штучний інтелект зрозумів, куди яке ставити. Самі фото прикріпиш на кроці 2.</p>
+      <label for="p1">Фото для привітання (портрет)</label>
+      <input type="text" id="p1" name="p1" placeholder="портрет з білою гортензією" data-req="опис фото 1">
+      <label for="p2">Фото для картки 1</label>
+      <input type="text" id="p2" name="p2" placeholder="я наношу помаду" data-req="опис фото 2">
+      <div id="p3wrap">
+        <label for="p3">Фото для картки 2</label>
+        <input type="text" id="p3" name="p3" placeholder="я з планшетом у кріслі" data-req="опис фото 3" data-card2>
+      </div>
+
+      <div class="result">
+        <h4>Твій готовий текст</h4>
+        <p>Збирається автоматично з полів вище. Натисни «Скопіювати» і вставляй на кроці 2.</p>
+        <div class="missing hidden" id="missing"></div>
+        <textarea id="out" readonly aria-label="Готовий текст"></textarea>
+        <div class="acts">
+          <button type="button" class="btn" id="copy">Скопіювати готовий текст</button>
+          <button type="button" class="btn ghost small" id="clear">Очистити всі поля</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- КРОК 2 -->
+<section id="step2">
+  <div class="wrap">
+    <p class="eyebrow">Крок 2</p>
+    <h2>Обери варіант і зроби <em>дизайн сайту</em></h2>
+    <div class="goldline"></div>
+    <p>Сайт будує штучний інтелект, а публікує сервіс <b>Netlify</b>. Обери один варіант.</p>
+    <div class="cmp">
+      <div>
+        <p class="eyebrow">Варіант 1</p>
+        <h3>Швидкий <em>(netlify.new)</em></h3>
+        <ul class="pm">
+          <li class="plus">Вставила текст і фото — отримала готовий сайт</li>
+          <li class="plus">Найменше кроків, усе в одному місці</li>
+          <li class="minus">Якщо захочеш щось змінити (колір, текст, розташування, фото), може не вистачити безкоштовного ліміту, і доведеться або платити, або чекати наступного місяця</li>
+        </ul>
+        <p class="pmnote">Але шаблон із кроку 1 уже з першого разу дає гарний дизайн.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Варіант 2</p>
+        <h3>Гнучкий <em>(ШІ + Netlify Drop)</em></h3>
+        <ul class="pm">
+          <li class="plus">Правиш дизайн у чаті ШІ (штучного інтелекту) скільки завгодно, особливо з платною підпискою на ChatGPT чи Claude</li>
+          <li class="plus">Безкоштовного ліміту Netlify вистачає на більше сайтів і оновлень</li>
+          <li class="minus">Більше кроків: зробити сайт у чаті ШІ, зберегти файл, завантажити на Netlify</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Кредити</b> — це внутрішня «валюта» Netlify. На безкоштовному тарифі їх дають щомісяця, і вони оновлюються самі. Коли кредити закінчуються, вже опубліковані сайти продовжують працювати.</div>
+
+    <div class="variant" id="v1">
+      <h3>Варіант 1: <em>netlify.new</em></h3>
+      <p>Ти вставляєш текст і фото, а агент Netlify сам робить дизайн і публікує сайт.</p>
+      <ol class="num">
+        <li>Відкрий у браузері адресу <code>netlify.new</code>.</li>
+        <li>Увійди: <b class="ui">Sign up</b> → вхід через Google. Якщо акаунт уже є — <b class="ui">Log in</b>.</li>
+        <li>У велике поле для опису встав свій готовий текст із кроку 1.</li>
+        <li>Натисни <b class="ui">+</b> біля поля і прикріпи свої фото.</li>
+        <li>Агента (поле з назвою, наприклад <b class="ui">Claude Agent</b>) можна не змінювати.</li>
+        <li>Натисни кнопку відправки і зачекай кілька хвилин. Не закривай сторінку.</li>
+        <li>Праворуч з'явиться перегляд сайту. Перевір його на телефоні.</li>
+      </ol>
+      <p><b>Правки.</b> Напиши агенту в поле <b class="ui">Ask a follow-up…</b> усі зміни одним повідомленням, наприклад: «Зроби головну кнопку більшою; заміни фото в першому блоці (прикріплюю нове); виправ помилку в слові…».</p>
+      <div class="warn"><b>Якщо кредити закінчуються,</b> агент зупиниться з повідомленням <b class="ui">Running low</b>. Нічого не купуй: натисни <b class="ui">Wrap up</b>, щоб зберегти зроблене. Кредити оновляться на початку наступного місяця, а опублікований сайт працюватиме далі.</div>
+      <p>Далі переходь до <a href="#step3">кроку 3</a>.</p>
+    </div>
+
+    <div class="variant" id="v2">
+      <h3>Варіант 2: <em>чат + Netlify Drop</em></h3>
+      <p>Сайт робить Claude або ChatGPT у звичайному чаті. Ти бачиш його прямо в чаті і правиш скільки треба. Netlify потім тільки публікує готовий файл, тому кредити витрачаються лише на публікацію. Цей варіант перевірено з Claude: усе спрацювало навіть з телефона.</p>
+      <p class="eyebrow" style="margin-top:22px">Частина А. Робимо сайт у чаті</p>
+      <ol class="num">
+        <li>Відкрий новий чат у Claude (або ChatGPT).</li>
+        <li>Прикріпи свої фото (кнопка <b class="ui">+</b> або скріпка).</li>
+        <li>Встав свій готовий текст із кроку 1. Якщо в кроці 1 обрано «Варіант 2: чат», у кінці тексту вже будуть потрібні рядки: зробити файл <code>index.html</code> і вбудувати фото.</li>
+        <li>Подивись результат і напиши правки, якщо треба. Усе в чаті, без лімітів Netlify.</li>
+        <li>Коли сайт подобається, натисни на файл <b class="ui">index.html</b> → значок <b class="ui">поділитися</b> → <b class="ui">Зберегти у Файли</b> і обери папку, наприклад «Завантаження».</li>
+      </ol>
+      <p class="eyebrow" style="margin-top:22px">Частина Б. Публікуємо на Netlify</p>
+      <ol class="num">
+        <li>Відкрий у браузері <code>app.netlify.com/drop</code> і увійди (<b class="ui">Sign up</b> → через Google).</li>
+        <li>У блоці <b class="ui">Already built it?</b> натисни <b class="ui">choose a file</b>.</li>
+        <li>Знайди у Файлах <b class="ui">index.html</b> і обери його. Публікація займає кілька секунд.</li>
+        <li>Ти побачиш сторінку проєкту з адресою на кшталт <code>peaceful-taffy-9101b6.netlify.app</code> і позначкою <b class="ui">Published</b>.</li>
+      </ol>
+      <p>Далі переходь до <a href="#step3">кроку 3</a>: там важливий крок <b class="ui">Make public</b>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- КРОК 3 -->
+<section id="step3">
+  <div class="wrap">
+    <p class="eyebrow">Крок 3</p>
+    <h2>Опублікуй <em>сайт</em></h2>
+    <div class="goldline"></div>
+    <h3>Зроби сайт видимим для всіх</h3>
+    <p>Якщо біля назви проєкту стоїть позначка <b class="ui">Private</b>, сайт бачиш тільки ти. Натисни <b class="ui">Make public</b>.</p>
+    <h3>Зміни адресу на гарну</h3>
+    <p>Спочатку адреса випадкова, наприклад <code>peaceful-taffy-9101b6.netlify.app</code>.</p>
+    <ol class="num">
+      <li>На сторінці проєкту натисни <b class="ui">Project configuration</b>.</li>
+      <li>Натисни <b class="ui">Change project name</b> і впиши латиницею без пробілів, наприклад <code>olena-beauty</code>.</li>
+      <li>Збережи. Нова адреса: <code>olena-beauty.netlify.app</code>.</li>
+    </ol>
+    <h3>Перевір</h3>
+    <p>Відкрий адресу в приватній вкладці браузера або на іншому телефоні: сайт має відкриватися без входу в Netlify.</p>
+    <h3>Як оновити сайт пізніше</h3>
+    <ul class="dash">
+      <li><b>Варіант 1:</b> напиши зміни агенту на сторінці проєкту (витрачає кредити).</li>
+      <li><b>Варіант 2:</b> зроби правки в тому самому чаті, збережи новий <b class="ui">index.html</b>, відкрий сторінку проєкту в Netlify і в блоці <b class="ui">Already built it?</b> натисни <b class="ui">choose a file</b>. Адреса сайту не зміниться. Поле агента вгорі не використовуй: воно витрачає кредити.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- КРОК 4 -->
+<section id="step4">
+  <div class="wrap">
+    <p class="eyebrow">Крок 4</p>
+    <h2>Перевір <em>і поділись</em></h2>
+    <div class="goldline"></div>
+    <h3>Що НЕ можна класти на сайт</h3>
+    <p>Сайт бачить увесь інтернет, тому:</p>
+    <ul class="dash">
+      <li>жодних телефонів, адрес чи прізвищ клієнток;</li>
+      <li>жодних скриншотів переписок із видимими іменами;</li>
+      <li>жодних паролів і особистих документів;</li>
+      <li>відгуки — тільки з дозволу клієнтки.</li>
+    </ul>
+    <div class="note"><b>Достовірність.</b> Перевір кожне речення на готовому сайті: штучний інтелект може щось перефразувати або дописати. На сайті має бути тільки правда.</div>
+    <h3>Чек-лист перед тим, як ділитися</h3>
+    <div class="check4" id="checklist">
+      <label><input type="checkbox" data-k="c1"> Відкрила сайт на телефоні: усе читається, нічого не з'їжджає</label>
+      <label><input type="checkbox" data-k="c2"> Кожна кнопка веде куди треба</label>
+      <label><input type="checkbox" data-k="c3"> На сайті мої фото, а не стокові картинки</label>
+      <label><input type="checkbox" data-k="c4"> Текст без помилок і без вигаданих фактів</label>
+      <label><input type="checkbox" data-k="c5"> На сайті немає особистих даних клієнток</label>
+      <label><input type="checkbox" data-k="c6"> Натиснула Make public і перевірила сайт у приватній вкладці</label>
+      <label><input type="checkbox" data-k="c7"> Змінила адресу на гарну</label>
+      <label><input type="checkbox" data-k="c8"> Додала посилання в шапку профілю Instagram</label>
+    </div>
+  </div>
+</section>
+
+<footer><a class="logo" href="#">UPgrade <span>Hub</span></a><br>Інструкція для команди UPgrade</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var KEY='upgrade-site-form-v1', CKEY='upgrade-site-check-v1';
+  var f=document.getElementById('f'), out=document.getElementById('out'), miss=document.getElementById('missing');
+  var fields=f.querySelectorAll('input[type=text],input[type=url],textarea:not(#out)');
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():'';}
+  function load(){
+    try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');
+      fields.forEach(function(e){if(d[e.name]!=null)e.value=d[e.name];});
+      if(d.oneCard)document.getElementById('oneCard').checked=true;
+      if(d.variant){var r=f.querySelector('input[name=variant][value="'+d.variant+'"]');if(r)r.checked=true;}
+    }catch(e){}
+  }
+  function save(){
+    try{var d={};fields.forEach(function(e){d[e.name]=e.value;});
+      d.oneCard=document.getElementById('oneCard').checked;
+      d.variant=(f.querySelector('input[name=variant]:checked')||{}).value;
+      localStorage.setItem(KEY,JSON.stringify(d));
+    }catch(e){}
+  }
+  function ph(id){var e=document.getElementById(id);return '[заповніть: '+(e.dataset.req||e.placeholder)+']';}
+  function v(id){return val(id)||ph(id);}
+  function build(){
+    var one=document.getElementById('oneCard').checked;
+    document.getElementById('card2').classList.toggle('hidden',one);
+    document.getElementById('p3wrap').classList.toggle('hidden',one);
+    var variant=(f.querySelector('input[name=variant]:checked')||{}).value;
+    var L=[], n=1;
+    L.push('Створи односторінковий сайт-візитку українською мовою.');
+    L.push('Сайт має гарно виглядати на телефоні — більшість відвідувачок відкриють його з Instagram.');
+    L.push('');
+    L.push('Стиль: преміальний і жіночний. Нюдова база (беж, пудровий), акценти — золото і '+(val('color')||'відтінки фіолетового')+', багато повітря, сучасні шрифти.');
+    L.push('');
+    L.push('Блоки по порядку:');
+    L.push('');
+    L.push((n++)+'. ПРИВІТАННЯ (з моїм портретом)');
+    L.push(v('name')); L.push(v('role')); L.push(v('help'));
+    L.push('Кнопка: «Написати мені» → '+v('tg'));
+    L.push('');
+    L.push((n++)+'. ПРО МЕНЕ');
+    L.push('Заголовок: '+(val('aboutTitle')||'Як я почала'));
+    L.push(v('story'));
+    L.push('');
+    L.push((n++)+'. ЩО Я ПРОПОНУЮ ('+(one?'одна картка з фото':'дві картки з фото')+')');
+    L.push('Картка 1 — '+v('c1name'));
+    L.push(v('c1desc'));
+    L.push('Кнопка: «'+v('c1btn')+'» → '+v('c1link'));
+    if(val('c1btn2')||val('c1link2'))L.push('Друга кнопка: «'+v('c1btn2')+'» → '+v('c1link2'));
+    if(!one){
+      L.push('');
+      L.push('Картка 2 — '+v('c2name'));
+      L.push(v('c2desc'));
+      L.push('Кнопка: «'+v('c2btn')+'» → '+v('c2link'));
+    }
+    L.push('');
+    var rev=val('reviews');
+    if(rev){L.push((n++)+'. ВІДГУКИ');L.push(rev);L.push('');}
+    L.push((n++)+'. СОЦМЕРЕЖІ ТА ПОСИЛАННЯ');
+    L.push(v('links'));
+    if(val('reg'))L.push('Окремо, з підписом «'+(val('regCap')||'Уже вирішила? Зареєструйся і напиши мені в Telegram')+'»: '+val('reg'));
+    L.push('');
+    L.push('Фото (прикріплені):');
+    L.push('— '+v('p1')+' → блок привітання');
+    L.push('— '+v('p2')+' → картка 1');
+    if(!one)L.push('— '+v('p3')+' → картка 2');
+    L.push('Не використовуй інших фото, крім прикріплених.');
+    L.push('');
+    if(!rev)L.push('Блоку відгуків не роби.');
+    L.push('Не вигадуй відгуків, цифр і фактів — бери тільки мій текст.');
+    if(variant==='2'){
+      L.push('');
+      L.push('Зроби з цього один файл index.html.');
+      L.push('Вбудуй мої фото прямо у файл, щоб сайт працював як один файл без окремої папки.');
+      L.push('Покажи мені сайт у чаті.');
+    }
+    out.value=L.join('\n');
+    var empty=[];
+    f.querySelectorAll('[data-req]').forEach(function(e){
+      if(one&&e.hasAttribute('data-card2'))return;
+      if(!e.value.trim())empty.push(e.dataset.req);
+    });
+    if(empty.length){miss.classList.remove('hidden');miss.textContent='Ще не заповнено: '+empty.join(', ')+'. У тексті ці місця позначені «[заповніть: …]».';}
+    else miss.classList.add('hidden');
+    save();
+  }
+  function toast(t){var e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(function(){e.classList.remove('show');},2200);}
+  document.getElementById('copy').addEventListener('click',function(){
+    build();
+    var txt=out.value;
+    function fallback(){out.removeAttribute('readonly');out.focus();out.select();out.setSelectionRange(0,txt.length);
+      var ok=false;try{ok=document.execCommand('copy');}catch(e){}
+      out.setAttribute('readonly','');out.blur();toast(ok?'Скопійовано':'Виділи текст у полі і скопіюй вручну');}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(function(){toast(miss.classList.contains('hidden')?'Скопійовано. Переходь до кроку 2':'Скопійовано, але деякі поля ще порожні');},fallback);}
+    else fallback();
+  });
+  document.getElementById('clear').addEventListener('click',function(){
+    if(!confirm('Очистити всі поля? Твій текст буде видалено.'))return;
+    fields.forEach(function(e){e.value='';});document.getElementById('oneCard').checked=false;build();toast('Поля очищено');
+  });
+  f.addEventListener('input',build);f.addEventListener('change',build);
+  load();build();
+
+  // checklist
+  var cl=document.querySelectorAll('#checklist input');
+  try{var cd=JSON.parse(localStorage.getItem(CKEY)||'{}');cl.forEach(function(c){c.checked=!!cd[c.dataset.k];});}catch(e){}
+  cl.forEach(function(c){c.addEventListener('change',function(){try{var d={};cl.forEach(function(x){d[x.dataset.k]=x.checked;});localStorage.setItem(CKEY,JSON.stringify(d));}catch(e){}});});
+
+  // active step in nav
+  var links=document.querySelectorAll('.nav a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.dataset.s===en.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+    ['step1','step2','step3','step4'].forEach(function(id){io.observe(document.getElementById(id));});
+  }
+})();
+</script>
+</body>
+</html>
