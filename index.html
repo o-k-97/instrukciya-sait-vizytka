@@ -7,7 +7,7 @@
 <meta name="description" content="Покрокова інструкція для партнерок UPgrade: як зробити власний сайт-візитку з телефона, без коду.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Сайт-візитка з iPad чи телефона">
-<meta property="og:description" content="Заповни свій текст прямо на сторінці, скопіюй і зроби сайт за 4 кроки.">
+<meta property="og:description" content="Заповни свій текст прямо на сторінці, скопіюй і зроби сайт за 3 кроки.">
 <meta property="og:locale" content="uk_UA">
 <meta name="theme-color" content="#3E2652">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233E2652'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23B8935A'%3EU%3C/text%3E%3C/svg%3E">
@@ -61,6 +61,8 @@ b.ui{font-weight:600;color:var(--deep);background:var(--paper);border:1px solid 
 .steps b{font-family:var(--serif);font-weight:400;font-size:34px;color:var(--gold);line-height:1;min-width:34px}
 .steps span{font-size:16px}
 .steps small{display:block;color:var(--light);font-size:14px}
+.steps a.final{border-color:var(--gold);border-style:dashed}
+.steps a.final b{font-family:var(--sans);font-size:26px;text-align:center}
 
 /* sticky nav */
 .nav{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
@@ -125,6 +127,9 @@ ul.pm li.minus::before{content:"–";color:var(--muted)}
 .pmnote{font-size:15px;color:var(--deep);background:var(--light);padding:10px 14px;margin-top:4px}
 .cmp dt{color:var(--muted);font-size:13px;margin-top:10px}
 .cmp dd{color:var(--ink)}
+.shot{margin:14px 0 6px}
+.shot img{display:block;max-width:100%;max-height:85vh;width:auto;height:auto;border:1px solid var(--line);background:var(--paper)}
+.shot figcaption{font-size:13px;color:var(--muted);margin-top:4px}
 .variant{border-top:1px solid var(--line);margin-top:40px;padding-top:6px}
 .codebox{background:var(--paper);border:1px solid var(--line);padding:14px 16px;font-size:15px;white-space:pre-wrap;margin:10px 0}
 
@@ -149,7 +154,7 @@ footer .logo{display:inline-block;margin-bottom:6px}
       <a href="#step1"><b>1</b><span>Підготуй інформацію про себе<small>текст прямо на цій сторінці, фото, посилання</small></span></a>
       <a href="#step2"><b>2</b><span>Обери варіант і зроби дизайн сайту<small>netlify.new або чат + Netlify Drop</small></span></a>
       <a href="#step3"><b>3</b><span>Опублікуй сайт<small>зроби видимим для всіх і дай гарну адресу</small></span></a>
-      <a href="#step4"><b>4</b><span>Перевір і поділись<small>чек-лист і посилання в шапку профілю</small></span></a>
+      <a href="#final" class="final"><b>✓</b><span>Фінальний чек-лист<small>перевір сайт перед тим, як ділитися, і додай посилання в шапку профілю</small></span></a>
     </nav>
   </div>
 </header>
@@ -158,7 +163,7 @@ footer .logo{display:inline-block;margin-bottom:6px}
   <a href="#step1" data-s="step1">Крок 1</a>
   <a href="#step2" data-s="step2">Крок 2</a>
   <a href="#step3" data-s="step3">Крок 3</a>
-  <a href="#step4" data-s="step4">Крок 4</a>
+  <a href="#final" data-s="final">Чек-лист</a>
 </div></div>
 
 <!-- КРОК 1 -->
@@ -334,16 +339,21 @@ Instagram — https://www.instagram.com/…
       <h3>Варіант 1: <em>netlify.new</em></h3>
       <p>Ти вставляєш текст і фото, а агент Netlify сам робить дизайн і публікує сайт.</p>
       <ol class="num">
-        <li>Відкрий у браузері адресу <code>netlify.new</code>.</li>
-        <li>Увійди: <b class="ui">Sign up</b> → вхід через Google. Якщо акаунт уже є — <b class="ui">Log in</b>.</li>
-        <li>У велике поле для опису встав свій готовий текст із кроку 1.</li>
-        <li>Натисни <b class="ui">+</b> біля поля і прикріпи свої фото.</li>
-        <li>Агента (поле з назвою, наприклад <b class="ui">Claude Agent</b>) можна не змінювати.</li>
-        <li>Натисни кнопку відправки і зачекай кілька хвилин. Не закривай сторінку.</li>
-        <li>Праворуч з'явиться перегляд сайту. Перевір його на телефоні.</li>
+        <li>Відкрий посилання <a href="https://app.netlify.com/signup" target="_blank" rel="noopener">app.netlify.com/signup</a> і обери вхід через Google.
+          <figure class="shot"><a href="img/krok2-signup.jpg" target="_blank" rel="noopener" aria-label="Відкрити скрін на весь екран"><img src="img/krok2-signup.jpg" alt="Сторінка реєстрації Netlify: вхід через Google" loading="lazy" onerror="this.closest('figure').hidden=true"></a><figcaption>Натисни, щоб збільшити</figcaption></figure></li>
+        <li>Після входу Netlify відкриє довгу анкету. Заповнювати її не обов'язково: просто закрий цю вкладку, відкрий <a href="https://app.netlify.com" target="_blank" rel="noopener">app.netlify.com</a>, натисни <b class="ui">Log in with Google</b> і обери ту саму пошту.</li>
+        <li>Відкриється поле для опису сайту.
+          <figure class="shot"><a href="img/krok2-v1-pole.jpg" target="_blank" rel="noopener" aria-label="Відкрити скрін на весь екран"><img src="img/krok2-v1-pole.jpg" alt="Куди вставити текст, де прикріпити фото і де кнопка відправки" loading="lazy" onerror="this.closest('figure').hidden=true"></a><figcaption>Натисни, щоб збільшити</figcaption></figure>
+          <ul class="dash">
+            <li>встав у велике поле свій готовий текст із кроку 1;</li>
+            <li>натисни скріпку 📎 і прикріпи свої фото;</li>
+            <li>агента (наприклад, <b class="ui">Claude Agent</b>) можна не змінювати;</li>
+            <li>натисни кнопку відправки.</li>
+          </ul>
+          <div class="note">Не бачиш такої сторінки? Зроби скрін того, що бачиш, і надішли Оксані в <a href="https://t.me/Oksana_Klevchuk" target="_blank" rel="noopener">Telegram</a>.</div>
+        </li>
+        <li>Зачекай кілька хвилин і не закривай сторінку: Netlify генерує твій сайт.</li>
       </ol>
-      <p><b>Правки.</b> Напиши агенту в поле <b class="ui">Ask a follow-up…</b> усі зміни одним повідомленням, наприклад: «Зроби головну кнопку більшою; заміни фото в першому блоці (прикріплюю нове); виправ помилку в слові…».</p>
-      <div class="warn"><b>Якщо кредити закінчуються,</b> агент зупиниться з повідомленням <b class="ui">Running low</b>. Нічого не купуй: натисни <b class="ui">Wrap up</b>, щоб зберегти зроблене. Кредити оновляться на початку наступного місяця, а опублікований сайт працюватиме далі.</div>
       <p>Далі переходь до <a href="#step3">кроку 3</a>.</p>
     </div>
 
@@ -360,12 +370,14 @@ Instagram — https://www.instagram.com/…
       </ol>
       <p class="eyebrow" style="margin-top:22px">Частина Б. Публікуємо на Netlify</p>
       <ol class="num">
-        <li>Відкрий у браузері <code>app.netlify.com/drop</code> і увійди (<b class="ui">Sign up</b> → через Google).</li>
-        <li>У блоці <b class="ui">Already built it?</b> натисни <b class="ui">choose a file</b>.</li>
-        <li>Знайди у Файлах <b class="ui">index.html</b> і обери його. Публікація займає кілька секунд.</li>
-        <li>Ти побачиш сторінку проєкту з адресою на кшталт <code>peaceful-taffy-9101b6.netlify.app</code> і позначкою <b class="ui">Published</b>.</li>
+        <li>Відкрий посилання <a href="https://app.netlify.com/signup" target="_blank" rel="noopener">app.netlify.com/signup</a> і обери вхід через Google.
+          <figure class="shot"><a href="img/krok2-signup.jpg" target="_blank" rel="noopener" aria-label="Відкрити скрін на весь екран"><img src="img/krok2-signup.jpg" alt="Сторінка реєстрації Netlify: вхід через Google" loading="lazy" onerror="this.closest('figure').hidden=true"></a><figcaption>Натисни, щоб збільшити</figcaption></figure></li>
+        <li>Після входу Netlify відкриє довгу анкету. Заповнювати її не обов'язково: просто закрий цю вкладку, відкрий <a href="https://app.netlify.com" target="_blank" rel="noopener">app.netlify.com</a>, натисни <b class="ui">Log in with Google</b> і обери ту саму пошту.</li>
+        <li>Обери свій файл <b class="ui">index.html</b>: у блоці <b class="ui">Upload your project files</b> натисни <b class="ui">browse files to upload</b> і знайди файл у «Файлах».
+          <figure class="shot"><a href="img/krok2-v2-upload.jpg" target="_blank" rel="noopener" aria-label="Відкрити скрін на весь екран"><img src="img/krok2-v2-upload.jpg" alt="Де натиснути, щоб обрати файл index.html" loading="lazy" onerror="this.closest('figure').hidden=true"></a><figcaption>Натисни, щоб збільшити</figcaption></figure></li>
+        <li>Зачекай кілька хвилин і не закривай сторінку: Netlify публікує твій сайт.</li>
       </ol>
-      <p>Далі переходь до <a href="#step3">кроку 3</a>: там важливий крок <b class="ui">Make public</b>.</p>
+      <p>Далі переходь до <a href="#step3">кроку 3</a>.</p>
     </div>
   </div>
 </section>
@@ -378,31 +390,33 @@ Instagram — https://www.instagram.com/…
     <p class="eyebrow">Крок 3</p>
     <h2>Опублікуй <em>сайт</em></h2>
     <div class="goldline"></div>
-    <h3>Зроби сайт видимим для всіх</h3>
-    <p>Якщо біля назви проєкту стоїть позначка <b class="ui">Private</b>, сайт бачиш тільки ти. Натисни <b class="ui">Make public</b>.</p>
-    <h3>Зміни адресу на гарну</h3>
-    <p>Спочатку адреса випадкова, наприклад <code>peaceful-taffy-9101b6.netlify.app</code>.</p>
+    <h3>Твій сайт готовий</h3>
+    <p>Коли сайт буде готовий, Netlify покаже привітання.</p>
+    <figure class="shot"><a href="img/krok3-gotovo.jpg" target="_blank" rel="noopener" aria-label="Відкрити скрін на весь екран"><img src="img/krok3-gotovo.jpg" alt="Екран «сайт готовий»: посилання на сайт, Domain, публічний доступ, Make public" loading="lazy" onerror="this.closest('figure').hidden=true"></a><figcaption>Натисни, щоб збільшити</figcaption></figure>
     <ol class="num">
-      <li>На сторінці проєкту натисни <b class="ui">Project configuration</b>.</li>
-      <li>Натисни <b class="ui">Change project name</b> і впиши латиницею без пробілів, наприклад <code>olena-beauty</code>.</li>
-      <li>Збережи. Нова адреса: <code>olena-beauty.netlify.app</code>.</li>
+      <li>Натисни <b>зелене посилання</b>, щоб відкрити сайт і подивитися, як він виглядає.</li>
+      <li>У розділі <b class="ui">Domain</b> зміни адресу на гарну: латиницею, без пробілів, наприклад <code>olena-beauty</code>. Нова адреса буде <code>olena-beauty.netlify.app</code>.</li>
+      <li>Переконайся, що вибрано <b>публічний</b> доступ.</li>
+      <li>Натисни <b class="ui">Make public</b>.</li>
     </ol>
     <h3>Перевір</h3>
     <p>Відкрий адресу в приватній вкладці браузера або на іншому телефоні: сайт має відкриватися без входу в Netlify.</p>
     <h3>Як оновити сайт пізніше</h3>
     <ul class="dash">
-      <li><b>Варіант 1:</b> напиши зміни агенту на сторінці проєкту (витрачає кредити).</li>
-      <li><b>Варіант 2:</b> зроби правки в тому самому чаті, збережи новий <b class="ui">index.html</b>, відкрий сторінку проєкту в Netlify і в блоці <b class="ui">Already built it?</b> натисни <b class="ui">choose a file</b>. Адреса сайту не зміниться. Поле агента вгорі не використовуй: воно витрачає кредити.</li>
+      <li><b>Варіант 1:</b> напиши зміни агенту на сторінці проєкту (витрачає кредити).
+        <p style="margin-top:10px"><b>Правки.</b> Напиши агенту в поле <b class="ui">Ask a follow-up…</b> усі зміни одним повідомленням, наприклад: «Зроби головну кнопку більшою; заміни фото в першому блоці (прикріплюю нове); виправ помилку в слові…».</p>
+        <div class="warn"><b>Якщо кредити закінчуються,</b> агент зупиниться з повідомленням <b class="ui">Running low</b>. Нічого не купуй: натисни <b class="ui">Wrap up</b>, щоб зберегти зроблене. Кредити оновляться на початку наступного місяця, а опублікований сайт працюватиме далі.</div></li>
+      <li><b>Варіант 2:</b> зроби правки в тому самому чаті, збережи новий <b class="ui">index.html</b>, відкрий сторінку проєкту в Netlify і в блоці <b class="ui">Upload your project files</b> натисни <b class="ui">browse files to upload</b>. Адреса сайту не зміниться. Поле агента вгорі не використовуй: воно витрачає кредити.</li>
     </ul>
   </div>
 </section>
 
 <div class="stripe"></div>
 
-<!-- КРОК 4 -->
-<section id="step4">
+<!-- ФІНАЛЬНИЙ ЧЕК-ЛИСТ -->
+<section id="final">
   <div class="wrap">
-    <p class="eyebrow">Крок 4</p>
+    <p class="eyebrow">Фінальний чек-лист</p>
     <h2>Перевір <em>і поділись</em></h2>
     <div class="goldline"></div>
     <h3>Що НЕ можна класти на сайт</h3>
@@ -543,7 +557,7 @@ Instagram — https://www.instagram.com/…
   var links=document.querySelectorAll('.nav a');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.dataset.s===en.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
-    ['step1','step2','step3','step4'].forEach(function(id){io.observe(document.getElementById(id));});
+    ['step1','step2','step3','final'].forEach(function(id){io.observe(document.getElementById(id));});
   }
 })();
 </script>
