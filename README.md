@@ -1,2 +1,2 @@
-# sait-vizytka
+# instrukciya-sait-vizytka
 Інструкція для команди по створенню візитки
